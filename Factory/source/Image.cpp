@@ -31,6 +31,9 @@ using std::endl;
 
 int main()
 {
+	Image img;
+	cout << sizeof(img) << endl;
+
 	cout << "Press Enter to continue..." << endl;
 	cin.get();
 	return 0;
