@@ -1,4 +1,11 @@
 /*
+
+Image.h
+
+$Id: ~/git/design-patterns/Factory/include/Image.h $
+
+Definition of the Image class.
+
 The MIT License (MIT)
 
 Copyright (c) 2013 rajendrauppal
@@ -21,11 +28,11 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef _IMAGE_H_
-#define _IMAGE_H_
+#ifndef Image_INCLUDED
+#define Image_INCLUDED
 
 class Image
 {
 };
 
-#endif
+#endif // Image_INCLUDED

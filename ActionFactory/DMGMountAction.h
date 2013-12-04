@@ -1,4 +1,7 @@
 
+#ifndef DMGMountAction_INCLUDED
+#define DMGMountAction_INCLUDED
+
 #include "Action.h"
 
 class DMGMountAction : public Action
@@ -9,3 +12,5 @@ public:
 		return true; 
 	}
 };
+
+#endif // DMGMountAction_INCLUDED

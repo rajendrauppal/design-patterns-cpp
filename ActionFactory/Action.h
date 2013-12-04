@@ -1,6 +1,6 @@
 
-#ifndef _ACTION_H_
-#define _ACTION_H_
+#ifndef Action_INCLUDED
+#define Action_INCLUDED
 
 class Action
 {
@@ -8,4 +8,4 @@ public:
 	virtual bool Execute() = 0;
 };
 
-#endif
+#endif // Action_INCLUDED

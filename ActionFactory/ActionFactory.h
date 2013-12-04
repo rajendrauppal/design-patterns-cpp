@@ -1,6 +1,6 @@
 
-#ifndef _ACTION_FACTORY_H_
-#define _ACTION_FACTORY_H_
+#ifndef ActionFactory_INCLUDED
+#define ActionFactory_INCLUDED
 
 #include "Action.h"
 
@@ -11,4 +11,4 @@ public:
 	static Action * CreateAction(ActionType at);
 };
 
-#endif
+#endif // ActionFactory_INCLUDED

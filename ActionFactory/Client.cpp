@@ -1,7 +1,7 @@
 
 #include "ActionFactory.h"
 
-int main()
+int main__()
 {
 	Action * mac_action = ActionFactory::CreateAction( ActionFactory::DMG );
 	mac_action->Execute();
