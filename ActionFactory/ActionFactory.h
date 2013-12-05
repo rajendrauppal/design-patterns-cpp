@@ -31,6 +31,10 @@ class ActionFactory
 	/// Responsible for creating user specified action object
 {
 public:
+	ActionFactory();
+	
+	~ActionFactory();
+
 	static enum ActionType {DMG, ZIP};
 		/// Action types at present, DMG for Macintosh and ZIP for Windows
 

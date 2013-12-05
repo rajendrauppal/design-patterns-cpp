@@ -23,8 +23,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #include "ExtractZIPAction.h"
 
+ExtractZIPAction::ExtractZIPAction() 
+{
+
+}
+
 bool ExtractZIPAction::Execute()
-	/// Overrides Execute method of abstract base class 'Action'
 {
 	return true;
+}
+
+ExtractZIPAction * ExtractZIPAction::CreateInstance()
+{
+	return new ExtractZIPAction();
 }

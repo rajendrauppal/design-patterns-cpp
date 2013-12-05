@@ -23,8 +23,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #include "ExtractDMGAction.h"
 
+ExtractDMGAction::ExtractDMGAction()
+{
+
+}
+
 bool ExtractDMGAction::Execute()
-	/// Overrides Execute method of abstract base class 'Action'
 {
 	return true;
+}
+
+ExtractDMGAction * ExtractDMGAction::CreateInstance()
+{
+	return new ExtractDMGAction();
 }

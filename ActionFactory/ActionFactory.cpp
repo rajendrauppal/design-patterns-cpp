@@ -28,16 +28,26 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Action * ActionFactory::_action = (Action*)0;
 
+ActionFactory::ActionFactory()
+{
+
+}
+
+ActionFactory::~ActionFactory()
+{
+	ReleaseActionObject();
+}
+
 Action * ActionFactory::GetActionObject( ActionType at )
 	/// Creates concrete action object and returns abstract class Action pointer
 {
 	ReleaseActionObject(); // in case _action object is already aquired
 
 	if ( DMG == at ) {
-		_action = new ExtractDMGAction();
+		_action = ExtractDMGAction::CreateInstance();
 	}
 	else if ( ZIP == at ) {
-		_action = new ExtractZIPAction();
+		_action = ExtractZIPAction::CreateInstance();
 	}
 
 	return _action;

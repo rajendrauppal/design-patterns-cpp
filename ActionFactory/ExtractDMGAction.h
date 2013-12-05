@@ -33,6 +33,9 @@ public:
 	virtual bool Execute();
 		/// Overrides Execute method of abstract base class 'Action'
 
+	static ExtractDMGAction * CreateInstance();
+		/// Create method published for ActionFactory to use
+
 private:
 	ExtractDMGAction();
 		/// Client not allowed to create this object directly

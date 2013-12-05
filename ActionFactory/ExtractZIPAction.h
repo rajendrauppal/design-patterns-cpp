@@ -33,6 +33,9 @@ public:
 	virtual bool Execute();
 		/// Overrides Execute method of abstract base class 'Action'
 
+	static ExtractZIPAction * CreateInstance();
+		/// Create method published for ActionFactory to use
+
 private:
 	ExtractZIPAction();
 		/// Client not allowed to create this object directly
