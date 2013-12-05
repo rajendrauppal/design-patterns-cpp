@@ -21,18 +21,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "ActionFactory.h"
+#include "ExtractZIPAction.h"
 
-/// Driver program for testing ActionFactory
-int main()
+bool ExtractZIPAction::Execute()
+	/// Overrides Execute method of abstract base class 'Action'
 {
-	Action * mac_action = ActionFactory::GetActionObject( ActionFactory::DMG );
-	mac_action->Execute();
-	ActionFactory::ReleaseActionObject( mac_action );
-
-	Action * win_action = ActionFactory::GetActionObject( ActionFactory::ZIP );
-	win_action->Execute();
-	ActionFactory::ReleaseActionObject( win_action );
-
-	return 0;
+	return true;
 }
