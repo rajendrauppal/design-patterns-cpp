@@ -21,10 +21,17 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "DMGMountAction.h"
+#ifndef ExtractDMGAction_INCLUDED
+#define ExtractDMGAction_INCLUDED
 
-bool DMGMountAction::Execute()
-	/// Overrides Execute method of abstract base class 'Action'
+#include "Action.h"
+
+class ExtractDMGAction : public Action
+	/// Concrete Action derived class
 {
-	return true;
-}
+public:
+	virtual bool Execute();
+		/// Overrides Execute method of abstract base class 'Action'
+};
+
+#endif // DMGMountAction_INCLUDED

@@ -23,7 +23,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #include "ActionFactory.h"
 
-#include "DMGMountAction.h"
+#include "ExtractDMGAction.h"
 #include "ExtractZIPAction.h"
 
 Action * ActionFactory::GetActionObject( ActionType at )
@@ -32,7 +32,7 @@ Action * ActionFactory::GetActionObject( ActionType at )
 	Action * action = (Action*)0;
 
 	if ( at == DMG ) {
-		action = new DMGMountAction();
+		action = new ExtractDMGAction();
 	}
 	else if ( at == ZIP ) {
 		action = new ExtractZIPAction();
