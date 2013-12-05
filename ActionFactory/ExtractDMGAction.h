@@ -32,6 +32,19 @@ class ExtractDMGAction : public Action
 public:
 	virtual bool Execute();
 		/// Overrides Execute method of abstract base class 'Action'
+
+private:
+	ExtractDMGAction();
+		/// Client not allowed to create this object directly
+
+	ExtractDMGAction( const ExtractDMGAction& other );
+		/// Client not allowed to copy existing object
+
+	ExtractDMGAction& operator=( const ExtractDMGAction& rhs );
+		/// Client not allowed to assign another object to a new one
+
+	~ExtractDMGAction();
+		/// Client can't directly destroy this object
 };
 
-#endif // DMGMountAction_INCLUDED
+#endif // ExtractDMGAction_INCLUDED

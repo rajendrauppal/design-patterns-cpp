@@ -28,11 +28,11 @@ int main()
 {
 	Action * mac_action = ActionFactory::GetActionObject( ActionFactory::DMG );
 	mac_action->Execute();
-	ActionFactory::ReleaseActionObject( mac_action );
+	ActionFactory::ReleaseActionObject();
 
 	Action * win_action = ActionFactory::GetActionObject( ActionFactory::ZIP );
 	win_action->Execute();
-	ActionFactory::ReleaseActionObject( win_action );
+	ActionFactory::ReleaseActionObject();
 
 	return 0;
 }

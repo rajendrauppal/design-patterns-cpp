@@ -32,6 +32,19 @@ class ExtractZIPAction : public Action
 public:
 	virtual bool Execute();
 		/// Overrides Execute method of abstract base class 'Action'
+
+private:
+	ExtractZIPAction();
+		/// Client not allowed to create this object directly
+
+	ExtractZIPAction( const ExtractZIPAction& other );
+		/// Client not allowed to copy existing object
+
+	ExtractZIPAction& operator=( const ExtractZIPAction& rhs );
+		/// Client not allowed to assign another object to a new one
+
+	~ExtractZIPAction();
+		/// Client can't directly destroy this object
 };
 
 #endif // ExtractZIPAction_INCLUDED

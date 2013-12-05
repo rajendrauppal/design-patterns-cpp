@@ -26,24 +26,26 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "ExtractDMGAction.h"
 #include "ExtractZIPAction.h"
 
+Action * ActionFactory::_action = (Action*)0;
+
 Action * ActionFactory::GetActionObject( ActionType at )
 	/// Creates concrete action object and returns abstract class Action pointer
 {
-	Action * action = (Action*)0;
+	ReleaseActionObject(); // in case _action object is already aquired
 
-	if ( at == DMG ) {
-		action = new ExtractDMGAction();
+	if ( DMG == at ) {
+		_action = new ExtractDMGAction();
 	}
-	else if ( at == ZIP ) {
-		action = new ExtractZIPAction();
+	else if ( ZIP == at ) {
+		_action = new ExtractZIPAction();
 	}
 
-	return action;
+	return _action;
 }
 
-void ActionFactory::ReleaseActionObject( Action * action )
+void ActionFactory::ReleaseActionObject()
 	/// Releases Action object pointed to by action parameter
 {
-	delete action;
-	action = (Action*)0;
+	delete _action;
+	_action = (Action*)0;
 }

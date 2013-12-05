@@ -37,8 +37,13 @@ public:
 	static Action * GetActionObject( ActionType at );
 		/// Creates concrete action object and returns abstract class Action pointer
 
-	static void ReleaseActionObject( Action * action );
+	static void ReleaseActionObject();
 		/// Releases Action object pointed to by action parameter
+
+private:
+	static Action * _action;
+		/// Pointer to the asked Action object
+		/// ActionFactory class is the owner
 };
 
 #endif // ActionFactory_INCLUDED
