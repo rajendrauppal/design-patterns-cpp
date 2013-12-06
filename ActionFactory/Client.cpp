@@ -27,11 +27,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 int main()
 {
 	Action * mac_action = ActionFactory::GetActionObject( ActionFactory::DMG );
-	mac_action->Execute();
+	bool result = mac_action->Execute();
 	ActionFactory::ReleaseActionObject();
 
 	Action * win_action = ActionFactory::GetActionObject( ActionFactory::ZIP );
-	win_action->Execute();
+	result = win_action->Execute();
 	ActionFactory::ReleaseActionObject();
 
 	return 0;

@@ -24,7 +24,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #ifndef ExtractDMGAction_INCLUDED
 #define ExtractDMGAction_INCLUDED
 
+#include <string>
+
 #include "Action.h"
+
+using std::string;
 
 class ExtractDMGAction : public Action
 	/// Concrete Action derived class
@@ -48,6 +52,17 @@ private:
 
 	~ExtractDMGAction();
 		/// Client can't directly destroy this object
+
+	bool mount( string source );
+		/// Mounts DMG disk image source to machine volumes
+
+	bool extract( string source, string destination );
+		/// Extracts DMG disk image from source to destination
+		/// source: full path to dmg
+		/// destination: valid existing path to destination, will create if not exists
+
+	bool unmount( string source );
+		/// Unmounts DMG disk image source from machine volumes
 };
 
 #endif // ExtractDMGAction_INCLUDED

@@ -30,10 +30,31 @@ ExtractDMGAction::ExtractDMGAction()
 
 bool ExtractDMGAction::Execute()
 {
-	return true;
+	string source, destination;
+
+	bool mount_result = mount( source );
+	bool extract_result = extract( source, destination );
+	bool unmount_result = unmount ( source );
+	
+	return ( mount_result && extract_result && unmount_result );
 }
 
 ExtractDMGAction * ExtractDMGAction::CreateInstance()
 {
 	return new ExtractDMGAction();
+}
+
+bool ExtractDMGAction::mount( string source )
+{
+	return true;
+}
+
+bool ExtractDMGAction::extract( string source, string destination )
+{
+	return true;
+}
+
+bool ExtractDMGAction::unmount( string source )
+{
+	return true;
 }

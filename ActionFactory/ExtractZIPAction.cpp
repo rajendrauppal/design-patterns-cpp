@@ -30,10 +30,17 @@ ExtractZIPAction::ExtractZIPAction()
 
 bool ExtractZIPAction::Execute()
 {
-	return true;
+	string source, destination;
+	bool result = extract( source, destination );
+	return result;
 }
 
 ExtractZIPAction * ExtractZIPAction::CreateInstance()
 {
 	return new ExtractZIPAction();
+}
+
+bool ExtractZIPAction::extract( string source, string destination )
+{
+	return true;
 }

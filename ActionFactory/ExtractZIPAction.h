@@ -24,7 +24,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #ifndef ExtractZIPAction_INCLUDED
 #define ExtractZIPAction_INCLUDED
 
+#include <string>
+
 #include "Action.h"
+
+using std::string;
 
 class ExtractZIPAction : public Action
 	/// Concrete Action derived class
@@ -48,6 +52,11 @@ private:
 
 	~ExtractZIPAction();
 		/// Client can't directly destroy this object
+
+	bool extract( string source, string destination );
+		/// Extracts zip file from source to destination
+		/// source: full path to zip file
+		/// destination: valid existing path to destination, will create if not exists
 };
 
 #endif // ExtractZIPAction_INCLUDED
