@@ -21,3 +21,18 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#ifndef HighResolutionDisplayDriver_INCLUDED
+#define HighResolutionDisplayDriver_INCLUDED
+
+#include "DisplayDriver.h"
+
+class HighResolutionDisplayDriver : public DisplayDriver
+{
+public:
+	void draw()
+	{
+		
+	}
+};
+
+#endif /// HighResolutionDisplayDriver_INCLUDED

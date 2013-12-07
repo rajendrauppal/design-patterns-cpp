@@ -21,3 +21,23 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#ifndef ResolutionFactory_INCLUDED
+#define ResolutionFactory_INCLUDED
+
+#include "DisplayDriver.h"
+#include "PrintDriver.h"
+
+class ResolutionFactory
+{
+public:
+	virtual DisplayDriver * GetDisplayDriver() = 0;
+
+	virtual PrintDriver * GetPrintDriver() = 0;
+
+	static ResolutionFactory * GetResolutionFactory();
+
+private:
+	static ResolutionFactory * _factory;
+};
+
+#endif /// ResolutionFactory_INCLUDED

@@ -21,3 +21,13 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#ifndef PrintDriver_INCLUDED
+#define PrintDriver_INCLUDED
+
+class PrintDriver
+{
+public:
+	virtual void print() = 0;
+};
+
+#endif /// PrintDriver_INCLUDED

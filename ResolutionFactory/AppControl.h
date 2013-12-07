@@ -21,3 +21,36 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#ifndef AppControl_INCLUDED
+#define AppControl_INCLUDED
+
+#include "ResolutionFactory.h"
+#include "DisplayDriver.h"
+#include "PrintDriver.h"
+
+class AppControl
+{
+public:
+	AppControl()
+	{
+		ResolutionFactory * resolutionFactory = ResolutionFactory::GetResolutionFactory();
+		_displayDriver = resolutionFactory->GetDisplayDriver();
+		_printDriver = resolutionFactory->GetPrintDriver();
+	}
+
+	void doDraw()
+	{
+		_displayDriver->draw();
+	}
+
+	void doPrint()
+	{
+		_printDriver->print();
+	}
+
+private:
+	DisplayDriver * _displayDriver;
+	PrintDriver * _printDriver;
+};
+
+#endif

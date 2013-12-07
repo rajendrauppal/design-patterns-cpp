@@ -21,3 +21,13 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+#ifndef DisplayDriver_INCLUDED
+#define DisplayDriver_INCLUDED
+
+class DisplayDriver
+{
+public:
+	virtual void draw() = 0;	
+};
+
+#endif /// DisplayDriver_INCLUDED
