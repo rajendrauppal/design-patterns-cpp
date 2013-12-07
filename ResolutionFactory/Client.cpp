@@ -29,26 +29,30 @@ using std::endl;
 
 #include "Driver.h"
 
+void Print(ResolutionFactory * factory)
+{
+	PrintDriver * printDriver = factory->GetPrintDriver();
+	printDriver->print();
+}
+
+void Draw(ResolutionFactory * factory)
+{
+	DisplayDriver * displayDriver = factory->GetDisplayDriver();
+	displayDriver->draw();
+}
+
 int main()
 {
 	/// Working with high resolution printing
 	ResolutionFactory * factory = ResolutionFactory::GetResolutionFactory(ResolutionFactory::HIGH);
+	Print(factory);
+	Draw(factory);
 	
-	PrintDriver * printDriver = factory->GetPrintDriver();
-	printDriver->print();
-
-	DisplayDriver * displayDriver = factory->GetDisplayDriver();
-	displayDriver->draw();
-
 	/// Working with low resolution printing
 	factory = ResolutionFactory::GetResolutionFactory(ResolutionFactory::LOW);
+	Print(factory);
+	Draw(factory);
 	
-	printDriver = factory->GetPrintDriver();
-	printDriver->print();
-
-	displayDriver = factory->GetDisplayDriver();
-	displayDriver->draw();
-
 	cout << "Press Enter to continue..." << endl;
 	cin.get();
 	return 0;
