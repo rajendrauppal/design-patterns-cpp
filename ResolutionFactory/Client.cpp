@@ -21,13 +21,17 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+
 #include <iostream>
+
 
 using std::cout;
 using std::cin;
 using std::endl;
 
+
 #include "Driver.h"
+
 
 void Print(ResolutionFactory * factory)
 {
@@ -35,20 +39,22 @@ void Print(ResolutionFactory * factory)
 	printDriver->print();
 }
 
+
 void Draw(ResolutionFactory * factory)
 {
 	DisplayDriver * displayDriver = factory->GetDisplayDriver();
 	displayDriver->draw();
 }
 
+
 int main()
 {
-	/// Working with high resolution printing
+	// Working with high resolution printing
 	ResolutionFactory * factory = ResolutionFactory::GetResolutionFactory(ResolutionFactory::HIGH);
 	Print(factory);
 	Draw(factory);
 	
-	/// Working with low resolution printing
+	// Working with low resolution printing
 	factory = ResolutionFactory::GetResolutionFactory(ResolutionFactory::LOW);
 	Print(factory);
 	Draw(factory);

@@ -21,27 +21,34 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+
 #include "Driver.h"
 
-/// Driver's print, draw implementations
+
+// Driver's print, draw implementations
 void HighResolutionPrintDriver::print()
 {
 }
+
 
 void HighResolutionDisplayDriver::draw()
 {
 }
 
+
 void LowResolutionPrintDriver::print()
 {
 }
+
 
 void LowResolutionDisplayDriver::draw()
 {
 }
 
-/// Resolution factory implementation
+
+// Resolution factory implementation
 ResolutionFactory * ResolutionFactory::_factory = (ResolutionFactory*)0;
+
 
 ResolutionFactory * ResolutionFactory::GetResolutionFactory(ResolutionFactory::Resolution r)
 {
@@ -54,20 +61,24 @@ ResolutionFactory * ResolutionFactory::GetResolutionFactory(ResolutionFactory::R
 	return _factory;
 }
 
+
 PrintDriver * HighResolutionFactory::GetPrintDriver()
 {
 	return new HighResolutionPrintDriver();
 }
+
 
 DisplayDriver * HighResolutionFactory::GetDisplayDriver()
 {
 	return new HighResolutionDisplayDriver();
 }
 
+
 PrintDriver * LowResolutionFactory::GetPrintDriver()
 {
 	return new LowResolutionPrintDriver();
 }
+
 
 DisplayDriver * LowResolutionFactory::GetDisplayDriver()
 {
