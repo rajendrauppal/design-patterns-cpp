@@ -21,69 +21,110 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+
 #ifndef Driver_INCLUDED
 #define Driver_INCLUDED
 
+
 class PrintDriver
+	/// Definition of the PrintDriver abstract class.
 {
 public:
 	virtual void print() = 0;
+		/// print() interface.
 };
 
+
 class DisplayDriver
+	/// Definition of the DisplayDriver abstract class.
 {
 public:
 	virtual void draw() = 0;
+		/// draw() interface.
 };
+
 
 class HighResolutionPrintDriver : public PrintDriver
+	/// Definition of HighResolutionPrintDriver class.
 {
 public:
 	void print();
+		/// Implements print() interface of PrintDriver abstract class.
 };
+
 
 class HighResolutionDisplayDriver : public DisplayDriver
+	/// Definition of HighResolutionDisplayDriver class.
 {
 public:
 	void draw();
+		/// Implements draw() interface of DisplayDriver abstract class.
 };
 
+
 class LowResolutionPrintDriver : public PrintDriver
+	/// Definition of LowResolutionPrintDriver class.
 {
 public:
 	void print();
+		/// Implements print() interface of PrintDriver abstract class.
 };
 
+
 class LowResolutionDisplayDriver : public DisplayDriver
+	/// Definition of LowResolutionDisplayDriver class.
 {
 public:
 	void draw();
+		/// Implements draw() interface of DisplayDriver abstract class.
 };
 
-/// Resolution factory
+
 class ResolutionFactory
+	/// Definition of ResolutionFactory abstract class.
 {
 public:
 	typedef enum { HIGH, LOW } Resolution;
+		/// enum Resolution to decide which factory to create.
+
 	static ResolutionFactory * GetResolutionFactory( Resolution r );
+		/// Returns HighResolutionFactory object OR LowResolutionFactory
+		/// object based on Resolution r.
+
 	virtual PrintDriver * GetPrintDriver() = 0;
+		/// Interface for creating PrintDriver object.
+
 	virtual DisplayDriver * GetDisplayDriver() = 0;
+		/// Interface for creating DisplayDriver object.
+
 private:
 	static ResolutionFactory * _factory;
+		/// pointer to static instance of ResolutionFactory class.
 };
+
 
 class HighResolutionFactory : public ResolutionFactory
+	/// Definition of HighResolutionFactory class.
 {
 public:
 	virtual PrintDriver * GetPrintDriver();
+		/// Returns HighResolutionPrintDriver object.
+
 	virtual DisplayDriver * GetDisplayDriver();
+		/// Returns HighResolutionDisplayDriver object.
 };
+
 
 class LowResolutionFactory : public ResolutionFactory
+	/// Definition of LowResolutionFactory class.
 {
 public:
 	virtual PrintDriver * GetPrintDriver();
+		/// Returns LowResolutionPrintDriver object.
+
 	virtual DisplayDriver * GetDisplayDriver();
+		/// Returns LowResolutionDisplayDriver object.
 };
 
-#endif /// Driver_INCLUDED
+
+#endif // Driver_INCLUDED
