@@ -1,7 +1,7 @@
 /*
 The MIT License (MIT)
 
-Copyright (c) 2013 rajendrauppal
+Copyright (c) 2013 Rajendra Kumar Uppal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -21,14 +21,17 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+
 #ifndef ExtractZIPAction_INCLUDED
 #define ExtractZIPAction_INCLUDED
 
-#include <string>
 
+#include <string>
 #include "Action.h"
 
+
 using std::string;
+
 
 class ExtractZIPAction : public Action
 	/// Concrete Action derived class
@@ -58,5 +61,6 @@ private:
 		/// source: full path to zip file
 		/// destination: valid existing path to destination, will create if not exists
 };
+
 
 #endif // ExtractZIPAction_INCLUDED

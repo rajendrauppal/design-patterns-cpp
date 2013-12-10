@@ -1,7 +1,7 @@
 /*
 The MIT License (MIT)
 
-Copyright (c) 2013 rajendrauppal
+Copyright (c) 2013 Rajendra Kumar Uppal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -21,12 +21,15 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+
 #include "ExtractDMGAction.h"
+
 
 ExtractDMGAction::ExtractDMGAction()
 {
 
 }
+
 
 bool ExtractDMGAction::Execute()
 {
@@ -39,20 +42,24 @@ bool ExtractDMGAction::Execute()
 	return ( mount_result && extract_result && unmount_result );
 }
 
+
 ExtractDMGAction * ExtractDMGAction::CreateInstance()
 {
 	return new ExtractDMGAction();
 }
+
 
 bool ExtractDMGAction::mount( string source )
 {
 	return true;
 }
 
+
 bool ExtractDMGAction::extract( string source, string destination )
 {
 	return true;
 }
+
 
 bool ExtractDMGAction::unmount( string source )
 {
