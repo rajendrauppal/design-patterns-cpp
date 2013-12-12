@@ -127,4 +127,23 @@ public:
 };
 
 
+/*
+Differences:
+1. Abstract Factory creates Factory, Factory creates Objects.
+
+2. AF uses composition to delegate responsibility of creating objects to 
+another class, F uses inheritance and relies on derived classes to create objects.
+
+3. AF doesn't necessarily use F, it may use Builder/Prototype to create objects.
+NOTE: Terms Factory pattern and Factory method pattern are used interchangeably. There
+is no difference between them.
+
+4. There are only 2 kinds of factory patterns:
+Abstract factory and
+Factory or Factory method
+
+5. AF is object creational pattern, F is class creational pattern.
+*/
+
+
 #endif // Driver_INCLUDED
