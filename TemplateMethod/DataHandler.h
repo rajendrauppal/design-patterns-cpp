@@ -22,3 +22,21 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 
+#ifndef DataHandler_INCLUDED
+#define DataHandler_INCLUDED
+
+
+#include <string>
+
+
+using std::string;
+
+
+class DataHandler
+{
+public:
+private:
+};
+
+
+#endif // DataHandler_INCLUDED
