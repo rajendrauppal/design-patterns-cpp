@@ -22,44 +22,32 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 
-#ifndef DataHandler_INCLUDED
-#define DataHandler_INCLUDED
+#include <iostream>
+#include "DataHandler.h"
+
+using std::cout;
+using std::cin;
+using std::endl;
 
 
-#include "DataObject.h"
-
-
-class DataHandler
+void Test_DataHandler()
 {
-public:
-    void execute(string filename) {}
-protected:
-    virtual bool isValidFileType(string filename) = 0;
-    virtual DataObject transformData(string filename) = 0;
-    virtual void process(DataObject data) = 0;
-    virtual bool isDebugMode() { return false; }
-};
+    DataHandler * handler = new StockHandler();
+    handler->execute("test.csv");
+    delete handler;
+    
+    handler = new DerivativeHandler();
+    handler->execute("test.csv");
+    delete handler;
+    handler = (DataHandler*)0;
+}
 
 
-class StockHandler : public DataHandler
+int main()
 {
-protected:
-    bool isValidFileType(string filename) { return true; }
-    DataObject transformData(string filename) { DataObject d; return d; }
-    void process(DataObject data) {}
-    bool isDebugMode() { return true; }
-private:
-    void log(string message);
-};
+    Test_DataHandler();
 
-
-class DerivativeHandler : public DataHandler
-{
-protected:
-    bool isValidFileType(string filename) { return true; }
-    DataObject transformData(string filename) { DataObject d; return d; }
-    void process(DataObject data) {}
-};
-
-
-#endif // DataHandler_INCLUDED
+    cout << "Press any key to continue..." << endl;
+    cin.get();
+    return 0;
+}

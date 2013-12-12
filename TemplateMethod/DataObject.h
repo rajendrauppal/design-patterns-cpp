@@ -22,44 +22,37 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 
-#ifndef DataHandler_INCLUDED
-#define DataHandler_INCLUDED
+#ifndef DataObject_INCLUDED
+#define DataObject_INCLUDED
 
 
-#include "DataObject.h"
+#include <string>
+#include "Types.h"
+
+using std::string;
 
 
-class DataHandler
+class DataObject
 {
 public:
-    void execute(string filename) {}
-protected:
-    virtual bool isValidFileType(string filename) = 0;
-    virtual DataObject transformData(string filename) = 0;
-    virtual void process(DataObject data) = 0;
-    virtual bool isDebugMode() { return false; }
-};
-
-
-class StockHandler : public DataHandler
-{
-protected:
-    bool isValidFileType(string filename) { return true; }
-    DataObject transformData(string filename) { DataObject d; return d; }
-    void process(DataObject data) {}
-    bool isDebugMode() { return true; }
+    string getName() { return _name; }
+    void setName(string name) { _name = name; }
+    double getOpenValue() { return _openValue; }
+    void setOpenValue(double openValue) { _openValue = openValue; }
+    double getHighValue() { return _highValue; }
+    void setHighValue(double highValue) { _highValue = highValue; }
+    double getLowValue() { return _lowValue; }
+    void setLowValue(double lowValue) { _lowValue = lowValue; }
+    double getCloseValue() { return _closeValue; }
+    void setCloseValue(double closeValue) { _closeValue = closeValue; }
 private:
-    void log(string message);
+    static const UInt32 _serialVersionUID = 1L;
+    string _name;
+    double _openValue;
+    double _highValue;
+    double _lowValue;
+    double _closeValue;
 };
 
 
-class DerivativeHandler : public DataHandler
-{
-protected:
-    bool isValidFileType(string filename) { return true; }
-    DataObject transformData(string filename) { DataObject d; return d; }
-    void process(DataObject data) {}
-};
-
-
-#endif // DataHandler_INCLUDED
+#endif // DataObject_INCLUDED
