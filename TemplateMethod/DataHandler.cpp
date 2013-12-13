@@ -22,38 +22,62 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 
-#ifndef DataObject_INCLUDED
-#define DataObject_INCLUDED
+#include "DataHandler.h"
 
 
-#include <string>
-#include "Types.h"
-
-
-using std::string;
-
-
-class DataObject
+void DataHandler::execute(string filename)
 {
-public:
-    string getName() { return _name; }
-    void setName(string name) { _name = name; }
-    double getOpenValue() { return _openValue; }
-    void setOpenValue(double openValue) { _openValue = openValue; }
-    double getHighValue() { return _highValue; }
-    void setHighValue(double highValue) { _highValue = highValue; }
-    double getLowValue() { return _lowValue; }
-    void setLowValue(double lowValue) { _lowValue = lowValue; }
-    double getCloseValue() { return _closeValue; }
-    void setCloseValue(double closeValue) { _closeValue = closeValue; }
-private:
-    static const UInt32 _serialVersionUID = 1L;
-    string _name;
-    double _openValue;
-    double _highValue;
-    double _lowValue;
-    double _closeValue;
-};
+}
 
 
-#endif // DataObject_INCLUDED
+bool DataHandler::isDebugMode() 
+{ 
+    return false; 
+}
+
+
+bool StockHandler::isValidFileType(string filename)
+{
+    return true;
+}
+
+
+DataObject StockHandler::transformData(string filename)
+{ 
+    DataObject d; 
+    return d; 
+}
+
+
+void StockHandler::process(DataObject data)
+{
+}
+
+
+bool StockHandler::isDebugMode() 
+{ 
+    return false; 
+}
+
+
+void StockHandler::log(string message)
+{
+}
+
+
+bool DerivativeHandler::isValidFileType(string filename)
+{
+    return true;
+}
+
+
+DataObject DerivativeHandler::transformData(string filename)
+{ 
+    DataObject d; 
+    return d; 
+}
+
+
+void DerivativeHandler::process(DataObject data)
+{
+}

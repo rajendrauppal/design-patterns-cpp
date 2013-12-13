@@ -32,22 +32,22 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 class DataHandler
 {
 public:
-    void execute(string filename) {}
+    void execute(string filename);
 protected:
     virtual bool isValidFileType(string filename) = 0;
     virtual DataObject transformData(string filename) = 0;
     virtual void process(DataObject data) = 0;
-    virtual bool isDebugMode() { return false; }
+    virtual bool isDebugMode();
 };
 
 
 class StockHandler : public DataHandler
 {
 protected:
-    bool isValidFileType(string filename) { return true; }
-    DataObject transformData(string filename) { DataObject d; return d; }
-    void process(DataObject data) {}
-    bool isDebugMode() { return true; }
+    bool isValidFileType(string filename);
+    DataObject transformData(string filename);
+    void process(DataObject data);
+    bool isDebugMode();
 private:
     void log(string message);
 };
@@ -56,9 +56,9 @@ private:
 class DerivativeHandler : public DataHandler
 {
 protected:
-    bool isValidFileType(string filename) { return true; }
-    DataObject transformData(string filename) { DataObject d; return d; }
-    void process(DataObject data) {}
+    bool isValidFileType(string filename);
+    DataObject transformData(string filename);
+    void process(DataObject data);
 };
 
 
